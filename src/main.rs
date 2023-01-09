@@ -1,18 +1,55 @@
 
-struct Color {
-red:u8,
-green:u8,
-blue:u128
-}
+//Impl keyword is like classes in javascript
+// struct Rectangle {
+//     width: u32,
+//     height: u32
+// }
 
-fn main(){
-    let blue = Color{red:0,green:200,blue:400};
-    print_color(&blue);
-}
+// impl Rectangle{
+//     fn print_description(&self){
+//         println!("Rectangle: {} x {} = {}", &self.width,&self.height,&self.width*&self.height);
+//     }
 
-fn print_color(c: &Color){
-    println!("Color - R:{},G:{},B:{}",c.red,c.green,c.blue)
-}
+//     fn is_square(&self) -> bool{ 
+//         return &self.width == &self.height;
+//     }
+// }
+
+// fn main(){
+//     let my_rect = Rectangle { width:10, height:10};
+//     println!("Is this shape a square? {}", my_rect.is_square());
+//     my_rect.print_description();
+// }
+
+
+// fn main(){
+//     let array = [2;400];
+
+// for n in array.iter(){
+//         println!("{}",n);
+//     }
+
+    // let number: [i32;5]= [1,2,3,4,5];
+    // for n in number.iter(){
+    //     println!("{}",n);
+    // }
+// }
+
+
+// struct Color {
+// red:u8,
+// green:u8,
+// blue:u128
+// }
+
+// fn main(){
+//     let blue = Color{red:0,green:200,blue:400};
+//     print_color(&blue);
+// }
+
+// fn print_color(c: &Color){
+//     println!("Color - R:{},G:{},B:{}",c.red,c.green,c.blue)
+// }
 
 
 
