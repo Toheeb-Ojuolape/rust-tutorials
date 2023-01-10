@@ -1,11 +1,47 @@
-use std::fs::File;
-use std::io::Write;
-// use std::io::prelude::*;
+struct Person{
+    name:String,
+    age:i32
+}
+
+trait HasVoiceBox{
+    //can the person speak
+    fn speak(&self);
+    fn can_speak(&self)->bool;
+}
+
+impl HasVoiceBox for Person {
+    fn speak(&self){
+        println!("Hello, my name is {}",&self.name)
+    }
+
+    fn can_speak(&self)->bool{
+        if self.age > 2 {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
 
 fn main(){
-let mut file = File::create("output.txt").expect("File could not be created,sorry");
-file.write_all(b"I think I like Rust!").expect("Cannot write to a file, sorry");
+    let person = Person{
+        name:String::from("Salma"),
+        age:1,
+    };
+    println!("Can {} speak? {} ", person.name,person.can_speak());
 }
+
+
+//writing a file to rust
+// use std::fs::File;
+// use std::io::Write;
+// // use std::io::prelude::*;
+
+// fn main(){
+// let mut file = File::create("output.txt").expect("File could not be created,sorry");
+// file.write_all(b"I think I like Rust!").expect("Cannot write to a file, sorry");
+// }
 
 
 //how to access commandline arguments in rust
