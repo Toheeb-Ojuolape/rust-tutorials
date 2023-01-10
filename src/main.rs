@@ -1,15 +1,28 @@
-use std::fs::File;
-use std::io::prelude::*;
+use std::env;
 
-fn main(){
-    let mut file = File::open("info.txt").expect("Can't open file!");
+fn main (){
+    let args: Vec<String> = env::args().collect();
 
-    let mut content = String::new();
-    file.read_to_string(&mut content).expect("Oops!, Cannot read file");
-
-    println!("File content:\n\n {}",content)
-
+    for argument in args.iter(){
+        println!("{}",argument);
+    }
 }
+
+
+
+//how to read files in rust
+// use std::fs::File;
+// use std::io::prelude::*;
+
+// fn main(){
+//     let mut file = File::open("info.txt").expect("Can't open file!");
+
+//     let mut content = String::new();
+//     file.read_to_string(&mut content).expect("Oops!, Cannot read file");
+
+//     println!("File content:\n\n {}",content)
+
+// }
 //vector in rust are arrays
 // fn main(){
 //     let mut my_vector = vec![1,2,3,4];
