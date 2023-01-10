@@ -1,3 +1,50 @@
+use std::fs::File;
+use std::io::prelude::*;
+
+fn main(){
+    let mut file = File::open("info.txt").expect("Can't open file!");
+
+    let mut content = String::new();
+    file.read_to_string(&mut content).expect("Oops!, Cannot read file");
+
+    println!("File content:\n\n {}",content)
+
+}
+//vector in rust are arrays
+// fn main(){
+//     let mut my_vector = vec![1,2,3,4];
+//     my_vector.push(49);
+//     for i in my_vector.iter(){
+//         println!("{}",i);
+//     }
+// }
+
+
+//traits
+// struct Person {
+// name:String,
+// age:u8
+// }
+
+// impl Person {
+//     fn to_string(&self) -> String {
+//         return format!("My name is {} and my age is {}",&self.name,&self.age)
+//     }
+// }
+// fn main(){
+// let dom = Person {name : String::from("Toheeb"),age:24};
+// println!("{}",dom.to_string())
+// }
+
+
+//strings
+// fn main(){
+//     let my_string = String::from("How are you doing");
+
+//     for word in my_string.split_whitespace(){
+//         println!("{}",word);
+//     }
+// }
 
 //Impl keyword is like classes in javascript
 // struct Rectangle {
