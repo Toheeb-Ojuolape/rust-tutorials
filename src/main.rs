@@ -1,36 +1,83 @@
-struct Person{
-    name:String,
-    age:i32
-}
-
-trait HasVoiceBox{
-    //can the person speak
-    fn speak(&self);
-    fn can_speak(&self)->bool;
-}
-
-impl HasVoiceBox for Person {
-    fn speak(&self){
-        println!("Hello, my name is {}",&self.name)
-    }
-
-    fn can_speak(&self)->bool{
-        if self.age > 2 {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-}
+extern crate rand;
+use rand::Rng;
 
 fn main(){
-    let person = Person{
-        name:String::from("Salma"),
-        age:1,
-    };
-    println!("Can {} speak? {} ", person.name,person.can_speak());
+    let random_number = rand::thread_rng().gen_range(1..30);
+    println!("Random Number {}",random_number);
 }
+//hashmaps
+// use std::collections::HashMap;
+
+// fn main(){
+//     let mut marks = HashMap::new();
+
+//     marks.insert("Rust Programming",98);
+//     marks.insert("Golang programming",75);
+//     marks.insert("Typescript programming",98);
+//     marks.insert("Flutter programming",75);
+
+//     println!("How many courses I did? {}",marks.len());
+
+//     match marks.get("Flutter programming"){
+//         Some(mark)=>println!("You got a score of {} in Golang",mark),
+//         None => println!("You didn't offer this course"),
+
+//     }
+
+//     //remove a value
+//     marks.remove("Flutter programming");
+
+//     for (subject,mark) in marks{
+//         println!("{}, {}",subject,mark)
+//     }
+// }
+
+
+//match feature that is like switch
+// fn main(){
+//     let number= 2;
+
+//     match number {
+//         1 => println!("It is the one"),
+//         2 => println!("There is two of them"),
+//         3 => println!("It doesn't match"),
+//         i32::MIN..=0_i32 | 4_i32..=i32::MAX => todo!()
+//     }
+// }
+
+// struct Person{
+//     name:String,
+//     age:i32
+// }
+
+// trait HasVoiceBox{
+//     //can the person speak
+//     fn speak(&self);
+//     fn can_speak(&self)->bool;
+// }
+
+// impl HasVoiceBox for Person {
+//     fn speak(&self){
+//         println!("Hello, my name is {}",&self.name)
+//     }
+
+//     fn can_speak(&self)->bool{
+//         if self.age > 2 {
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     }
+// }
+
+// fn main(){
+//     let person = Person{
+//         name:String::from("Salma"),
+//         age:1,
+//     };
+//     println!("Can {} speak? {} ", person.name,person.can_speak());
+// }
 
 
 //writing a file to rust
