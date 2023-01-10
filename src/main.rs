@@ -1,12 +1,23 @@
-use std::env;
+use std::fs::File;
+use std::io::Write;
+// use std::io::prelude::*;
 
-fn main (){
-    let args: Vec<String> = env::args().collect();
-
-    for argument in args.iter(){
-        println!("{}",argument);
-    }
+fn main(){
+let mut file = File::create("output.txt").expect("File could not be created,sorry");
+file.write_all(b"I think I like Rust!").expect("Cannot write to a file, sorry");
 }
+
+
+//how to access commandline arguments in rust
+// use std::env;
+
+// fn main (){
+//     let args: Vec<String> = env::args().collect();
+
+//     for argument in args.iter(){
+//         println!("{}",argument);
+//     }
+// }
 
 
 
