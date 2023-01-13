@@ -1,10 +1,51 @@
-extern crate rand;
-use rand::Rng;
+
+//string methods
 
 fn main(){
-    let random_number = rand::thread_rng().gen_range(1..30);
-    println!("Random Number {}",random_number);
+    {
+        let my_string:String = String::from("Rust is really cool");
+        println!("{}",my_string.replace("cool", "awesome"));
+    }
+
+    {
+        let my_string = String::from("The weather is \nnice\noutside mate!");
+        for line in my_string.lines(){
+            println!("[ {} ]",line);
+        }
+    }
+
+    {
+        let my_string = String::from("Leave+a+like+if+you+dare");
+        let tokens:Vec<&str> = my_string.split("+").collect();
+
+        println!("{}",tokens[2]);
+    }
+
+    {
+        let my_string = String::from("        My name is Tobi    \n\r");
+        println!("Before trim {}",my_string);
+        println!("After trim {}",my_string.trim())
+    }
+
+    {
+        let my_string = "decode_youtube";
+
+        match my_string.chars().nth(4){
+            Some(c) => println!("Character at index 4 is:{}",c),
+            None => println!("No character at index 4"),
+        
+
+    }
 }
+}
+
+// extern crate rand;
+// use rand::Rng;
+
+// fn main(){
+//     let random_number = rand::thread_rng().gen_range(1..30);
+//     println!("Random Number {}",random_number);
+// }
 //hashmaps
 // use std::collections::HashMap;
 
