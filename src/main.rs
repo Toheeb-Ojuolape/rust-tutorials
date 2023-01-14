@@ -1,43 +1,80 @@
-
-//string methods
+ mod module {
+ fn manual(){
+    println!(
+        "God abeg"
+    );
+ }
+ pub fn  print_message(){
+    manual();
+    println!("How you dey");
+ }
+}
 
 fn main(){
-    {
-        let my_string:String = String::from("Rust is really cool");
-        println!("{}",my_string.replace("cool", "awesome"));
-    }
+    module::print_message();
+}
 
-    {
-        let my_string = String::from("The weather is \nnice\noutside mate!");
-        for line in my_string.lines(){
-            println!("[ {} ]",line);
-        }
-    }
 
-    {
-        let my_string = String::from("Leave+a+like+if+you+dare");
-        let tokens:Vec<&str> = my_string.split("+").collect();
+// extern crate regex;
+// use regex::Regex;
 
-        println!("{}",tokens[2]);
-    }
+// fn main(){
+//     let re = Regex::new(r"(\w{4})").unwrap();
+//     let text = "tobi";
+//     match re.captures(text){
+//         Some(caps)=> println!("Found match {}", &caps[0]),
+//         None => println!("Could not find match")
+//     }
+// }
 
-    {
-        let my_string = String::from("        My name is Tobi    \n\r");
-        println!("Before trim {}",my_string);
-        println!("After trim {}",my_string.trim())
-    }
 
-    {
-        let my_string = "decode_youtube";
 
-        match my_string.chars().nth(4){
-            Some(c) => println!("Character at index 4 is:{}",c),
-            None => println!("No character at index 4"),
+// mod tobi;
+
+// fn main(){
+//  tobi::print_message();
+// }
+
+
+
+//string methods
+// fn main(){
+//     {
+//         let my_string:String = String::from("Rust is really cool");
+//         println!("{}",my_string.replace("cool", "awesome"));
+//     }
+
+//     {
+//         let my_string = String::from("The weather is \nnice\noutside mate!");
+//         for line in my_string.lines(){
+//             println!("[ {} ]",line);
+//         }
+//     }
+
+//     {
+//         let my_string = String::from("Leave+a+like+if+you+dare");
+//         let tokens:Vec<&str> = my_string.split("+").collect();
+
+//         println!("{}",tokens[2]);
+//     }
+
+//     {
+//         let my_string = String::from("        My name is Tobi    \n\r");
+//         println!("Before trim {}",my_string);
+//         println!("After trim {}",my_string.trim())
+//     }
+
+//     {
+//         let my_string = "decode_youtube";
+
+//         match my_string.chars().nth(4){
+//             Some(c) => println!("Character at index 4 is:{}",c),
+//             None => println!("No character at index 4"),
         
 
-    }
-}
-}
+//     }
+// }
+// }
 
 // extern crate rand;
 // use rand::Rng;
