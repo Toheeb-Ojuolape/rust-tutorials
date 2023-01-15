@@ -1,18 +1,142 @@
- mod module {
- fn manual(){
-    println!(
-        "God abeg"
-    );
- }
- pub fn  print_message(){
-    manual();
-    println!("How you dey");
- }
+
+#![allow(dead_code)]
+struct Rectangle{
+    width:u8,
+    height:u8
+}
+
+impl Rectangle{
+    fn is_square(&self)->bool{
+        self.width == self.height
+    }
 }
 
 fn main(){
-    module::print_message();
+
 }
+
+fn give_two() ->i32{
+   2
+}
+
+
+#[cfg(test)]
+mod code_tests{
+    #[test]
+    #[should_panic]
+    fn test_basic(){
+        assert!(1==1);
+        panic!("Oh no")
+    }
+    #[test]
+    fn test_equals(){
+        assert_eq!(super::give_two(),1+1);
+        assert_ne!(super::give_two(),1+2);
+    }
+    #[test]
+    #[should_panic]
+    fn test_struct(){
+        let r = super::Rectangle{width:50,height:50}; 
+        assert!(r.is_square());
+        panic!("Oh no")
+    }
+}
+
+// use std::process::Command;
+
+
+// fn main(){
+//     let mut cmd = Command::new("python");
+//     cmd.arg("tobi.py");
+
+//     //execute the command
+//     match cmd.output(){
+//         Ok(o) =>{
+//             //do stuff here
+//             unsafe{
+//                 println!("Output: {}",String::from_utf8_unchecked(o.stdout));
+//             }
+//         }
+//         Err(e) =>{
+//             println!("There was an error {}",e)
+//         }
+//     }
+// }
+
+
+// enum Day{
+//     Monday, Tuesday, Wednesday,Thursday,Friday,Saturday,Sunday
+// }
+
+// impl Day{
+//     fn is_weekday(&self)->bool{
+//         match self{
+//             &Day::Saturday | &Day::Sunday => return false,
+//             _ => return true
+//         }
+//     }
+// }
+
+// fn main(){
+//   let d = Day::Saturday;
+//   println!("Is this day a weekday? {}",d.is_weekday())
+// }
+
+
+
+//take another tutorial on async rust
+// extern crate reqwest;
+// use tokio::runtime::Runtime;
+
+// mod apicall{
+//     pub async fn get_request(){
+//         let response_text =reqwest::get("http://youtube.local/hello")
+//         .await.expect("Couldn't make a request")
+//         .text().await.expect("Could not read the response text");
+//         println!("Response Text:{}",response_text)
+//     }
+// }
+
+// fn main (){
+//     let mut rt = Runtime::new().unwrap();
+//     rt.block_on(async {
+//         apicall::get_request().await;
+//     });
+// }
+
+// fn main(){
+//    println!("Occupation is: {}", match get_occupation("Tobi"){
+//     Some(occupation) => occupation,
+//     None => "This user is jobless" 
+//    });
+// }
+
+// fn get_occupation(name:&str) -> Option<&str>{
+//     match name{
+//         "Domenic" => Some("Software Engineer"),
+//         "Martin" => Some("Dentist"),
+//         "Tobi" => Some("Bitcoin developer"),
+//         _ => None
+//     }
+// }
+
+
+
+//  mod module {
+//  fn manual(){
+//     println!(
+//         "God abeg"
+//     );
+//  }
+//  pub fn  print_message(){
+//     manual();
+//     println!("How you dey");
+//  }
+// }
+
+// fn main(){
+//     module::print_message();
+// }
 
 
 // extern crate regex;
